@@ -11,6 +11,9 @@
   --font-title: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
   --font-names: 'Great Vibes', 'Playfair Display', serif;
+
+  /* Additional colour for lighter timer background */
+  --color-olive-light: #DDE8C8;
 }
 
 /* Basic resets */
@@ -28,6 +31,7 @@ body {
   background-image: url('images/noise.png');
   background-repeat: repeat;
   background-size: 200px 200px;
+  background-position: 0 0;
   line-height: 1.6;
 }
 
@@ -102,7 +106,11 @@ a:hover {
   opacity: 1;
   transform: none;
   animation: none;
+  /* Ensure decorative leaves overlay appears within this section */
+  position: relative;
+  overflow: hidden;
 }
+
 .hero-names {
   font-family: var(--font-names);
   font-size: 4rem;
@@ -129,14 +137,18 @@ a:hover {
 .countdown-section {
   text-align: center;
   padding: 2rem 1rem;
-  /* Use olive tone for the countdown background */
-  background-color: var(--color-olive);
-  /* Dark text for better contrast on olive background */
+  /* Lighten the countdown background for better readability */
+  background-color: var(--color-olive-light);
+  /* Dark text for better contrast on the light background */
   color: var(--color-dark);
   /* Override global section animation for countdown to ensure visibility on load */
   opacity: 1;
   transform: none;
   animation: none;
+
+  /* Ensure decorative leaves overlay appears within this section */
+  position: relative;
+  overflow: hidden;
 }
 .countdown-section h2 {
   margin-bottom: 1rem;
@@ -163,7 +175,8 @@ section {
   padding: 3rem 1.5rem;
   max-width: 900px;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.75);
+  /* Make the section backgrounds more opaque so leaves remain visible mainly around the edges */
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   margin-bottom: 2rem;
@@ -329,6 +342,51 @@ section h2 {
     font-size: 1.5rem;
     gap: 1rem;
   }
+}
+
+/* ------------------------------------------------------------------ */
+/* Decorative leaves overlay for all central sections */
+/* This attaches a green eucalyptus illustration behind each major section */
+.hero,
+.countdown-section,
+.program-section,
+.location-section,
+.dress-section,
+.rsvp-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Use new decorative image for each island */
+.hero::before,
+.countdown-section::before,
+.program-section::before,
+.location-section::before,
+.dress-section::before,
+.rsvp-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/5289547006269395176.jpg');
+  /* Stretch the decorative image to fully cover the island's width and height */
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Ensure the content of each section appears above the decorative overlay */
+.hero > *,
+.countdown-section > *,
+.program-section > *,
+.location-section > *,
+.dress-section > *,
+.rsvp-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Animations */
