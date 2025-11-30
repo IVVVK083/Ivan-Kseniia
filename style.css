@@ -1,0 +1,356 @@
+/* Global variables for the wedding invitation site */
+:root {
+  /* Updated colour palette for warm natural style */
+  --color-beige: #F2E7D5;
+  --color-cream: #E8DCC0;
+  --color-olive: #7A8B55;
+  --color-brown: #8A6E56;
+  --color-dark: #4A3C2C;
+  --color-text: #4A3C2C;
+  --color-light-bg: #FBF9F5;
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-names: 'Great Vibes', 'Playfair Display', serif;
+}
+
+/* Basic resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-light-bg);
+  /* Subtle noise texture to simulate natural paper */
+  background-image: url('images/noise.png');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  color: var(--color-dark);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--color-olive);
+}
+
+/* Navigation */
+.nav {
+  width: 100%;
+  /* Semi-transparent beige backdrop for navigation */
+  background-color: rgba(242, 231, 215, 0.85);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+.nav-logo {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-brown);
+}
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-menu li a {
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+.nav-menu li a:hover {
+  background-color: var(--color-beige);
+  color: var(--color-dark);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  /* Warm gradient using beige and cream to create a natural feel */
+  background: linear-gradient(to bottom, var(--color-beige), var(--color-cream));
+  color: var(--color-dark);
+  /* Reset generic section styling for hero */
+  box-shadow: none;
+  border-radius: 0;
+  margin-bottom: 0;
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+.hero-names {
+  font-family: var(--font-names);
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+.hero-subtitle {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+.hero-date {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.hero-message {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Countdown */
+.countdown-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  /* Use olive tone for the countdown background */
+  background-color: var(--color-olive);
+  /* Dark text for better contrast on olive background */
+  color: var(--color-dark);
+  /* Override global section animation for countdown to ensure visibility on load */
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+.countdown-section h2 {
+  margin-bottom: 1rem;
+  color: var(--color-dark);
+}
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-family: var(--font-title);
+  font-size: 2rem;
+}
+.countdown .unit {
+  text-align: center;
+}
+.countdown .unit span {
+  display: block;
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+}
+
+/* Sections common styling */
+section {
+  padding: 3rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--color-dark);
+}
+
+/* Program Section */
+.program-section p {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.program-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+.program-list .time {
+  font-weight: 600;
+  color: var(--color-brown);
+  margin-right: 0.5rem;
+}
+
+/* Location Section */
+.location-section p {
+  margin-bottom: 0.75rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Dress Code Section */
+.dress-section p {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.palette {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.palette .color {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.1);
+}
+.dress-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+.dress-gallery img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* RSVP Section */
+.rsvp-section p {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.rsvp-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+.rsvp-form input,
+.rsvp-form select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* Ensure textareas in the RSVP form have consistent styling */
+.rsvp-form textarea {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  resize: vertical;
+}
+.btn-submit {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-brown);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-submit:hover {
+  background-color: var(--color-dark);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--color-beige);
+}
+.footer p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--color-dark);
+}
+.contact-methods {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.contact-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-olive);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+.contact-btn:hover {
+  background-color: var(--color-olive);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-menu {
+    gap: 0.75rem;
+  }
+  .hero-names {
+    font-size: 2.2rem;
+  }
+  .hero-date {
+    font-size: 1.5rem;
+  }
+  .program-list {
+    font-size: 1rem;
+  }
+  .countdown {
+    font-size: 1.5rem;
+    gap: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply fade-in to sections with delays */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+section:nth-of-type(1) { animation-delay: 0.1s; }
+section:nth-of-type(2) { animation-delay: 0.3s; }
+section:nth-of-type(3) { animation-delay: 0.5s; }
+section:nth-of-type(4) { animation-delay: 0.7s; }
+section:nth-of-type(5) { animation-delay: 0.9s; }

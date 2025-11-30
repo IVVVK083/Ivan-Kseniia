@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу — Иван и Ксения</title>
+    <!-- Google Fonts for elegant typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">И&К</div>
+            <ul class="nav-menu">
+                <li><a href="#date">Дата</a></li>
+                <li><a href="#program">Программа</a></li>
+                <li><a href="#location">Место</a></li>
+                <li><a href="#dress">Дресс‑код</a></li>
+                <li><a href="#rsvp">Подтверждение</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero / Save the Date Section -->
+    <section id="date" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-names">Иван &amp; Ксения</h1>
+            <p class="hero-subtitle">Save the date</p>
+            <p class="hero-date">18 июля 2026</p>
+            <p class="hero-message">Мы будем счастливы разделить наш первый семейный праздник с вами!</p>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <h2>До свадьбы осталось:</h2>
+        <div id="countdown" class="countdown"></div>
+    </section>
+
+    <!-- Program Section -->
+    <section id="program" class="program-section">
+        <h2>Программа мероприятия</h2>
+        <p>День нашей свадьбы может стать одним из самых приятных дней не только для нас, но и для вас!<br>Мы будем рады, если вы присоединитесь к нам.</p>
+        <ul class="program-list">
+            <li><span class="time">16:00</span> — сбор гостей</li>
+            <li><span class="time">до последнего гостя</span> — завершение</li>
+        </ul>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <h2>Место проведения</h2>
+        <p><strong>Ресторан:</strong> La Delicia</p>
+        <p><strong>Адрес:</strong> Севастопольский просп., 56А, Москва</p>
+        <p>Зал ресторана La Delicia обеспечивает уютную атмосферу для нашего торжества. Пожалуйста, приезжайте заранее, чтобы не пропустить начало.</p>
+    </section>
+
+    <!-- Dress Code Section -->
+    <section id="dress" class="dress-section">
+        <h2>Дресс‑код</h2>
+        <p>Мы не хотим утруждать вас сложным выбором нарядов, но будем рады, если вы выберете пастельные и спокойные оттенки из нашей палитры. Вдохновиться можно примерами ниже.</p>
+        <div class="palette">
+            <div class="color" style="background-color: var(--color-beige)" title="Beige"></div>
+            <div class="color" style="background-color: var(--color-pink)" title="Blush"></div>
+            <div class="color" style="background-color: var(--color-sage)" title="Sage"></div>
+            <div class="color" style="background-color: var(--color-olive)" title="Olive"></div>
+            <div class="color" style="background-color: var(--color-brown)" title="Brown"></div>
+            <div class="color" style="background-color: var(--color-dark)" title="Dark olive"></div>
+        </div>
+        <div class="dress-gallery">
+            <!-- Updated inspiration images reflecting the new colour palette -->
+            <img src="images/5289547006269395026.jpg" alt="Примеры нарядов и палитра 1">
+            <img src="images/5289547006269395025.jpg" alt="Примеры нарядов и палитра 2">
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="rsvp-section">
+        <h2>Подтверждение присутствия</h2>
+        <p>Просим ответить на несколько вопросов. Ответы помогут нам подготовить праздник по высшему разряду! Пожалуйста, заполните форму до 31&nbsp;марта 2026&nbsp;года.</p>
+        <!-- The form will submit directly to FormSubmit to send responses to the specified email. -->
+        <form class="rsvp-form" action="https://formsubmit.co/ivan.kondrashin.05@mail.ru" method="POST">
+            <!-- Customise email subject and disable captcha -->
+            <input type="hidden" name="_subject" value="RSVP на свадьбу Иван &amp; Ксения">
+            <input type="hidden" name="_captcha" value="false">
+            <label>
+                Ваше имя и фамилия:
+                <input type="text" name="name" placeholder="Введите имя" required>
+            </label>
+            <label>
+                Если вы будете с парой или семьёй — укажите все имена через запятую:
+                <input type="text" name="guests" placeholder="Имена через запятую">
+            </label>
+            <label>
+                Подтвердите своё присутствие:
+                <select name="attendance" required>
+                    <option value="">Выберите вариант</option>
+                    <option value="yes">Я приду / мы придём</option>
+                    <option value="no">К сожалению, меня не будет</option>
+                </select>
+            </label>
+            <label>
+                Предпочитаемые напитки (можно выбрать несколько, для каждого члена семьи):
+                <select name="drinks[]" multiple required>
+                    <option value="white-wine">Белое вино</option>
+                    <option value="red-wine">Красное вино</option>
+                    <option value="champagne">Шампанское</option>
+                    <option value="vodka">Водка</option>
+                    <option value="cognac">Коньяк</option>
+                    <option value="non-alcoholic">Безалкогольные напитки</option>
+                </select>
+            </label>
+
+            <label>
+                Музыкальные пожелания (по 1–2 трека для каждого члена семьи):
+                <textarea name="songs" placeholder="Укажите 1–2 трека, которые хотели бы услышать" rows="3"></textarea>
+            </label>
+            <button type="submit" class="btn-submit">Отправить анкету</button>
+        </form>
+    </section>
+
+    <!-- Footer removed as per user request -->
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
